@@ -14,10 +14,6 @@ import Marquee from '@yonyou/ac-complex-search-panel';
 import '@yonyou/ac-complex-search-panel/build/ac-complex-search-panel.css';
 
 ```
-
-## 效果
-
-![demo](./src/assets/images/demo.png)
  
 
 ## API
