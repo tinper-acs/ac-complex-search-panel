@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title></title>
+    <title>ac-complex-search-panel</title>
     <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
     <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-responsive.css"/>
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
@@ -14,10 +14,102 @@
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span3"><ul class="nav nav-list">
+    <li class="sidebar-header-2"><a href="#ac-complex-search-panel">ac-complex-search-panel</a></li>
+    <li class="sidebar-header-2"><a href="#api">API</a></li>
+    <li class="sidebar-header-4"><a href="#开发调试">开发调试</a></li>
 </ul>
       </div>
-      <div class="span9 main"><p>### </p>
-      </div>
+      <div class="span9 main"><h2 id="ac-complex-search-panel">ac-complex-search-panel</h2>
+<blockquote>
+<p> 查询面板React组件 <a href="https://tinper-acs.github.io/ac-complex-search-panel/">进入示例</a></p>
+</blockquote>
+<pre class="hljs"><code>$ ynpm install @yonyou/<span class="hljs-keyword">ac</span>-complex-<span class="hljs-keyword">search</span>-panel --<span class="hljs-keyword">save</span>-dev
+
+引入
+
+import Marquee from '@yonyou/<span class="hljs-keyword">ac</span>-complex-<span class="hljs-keyword">search</span>-panel';
+
+样式引入
+
+import '@yonyou/<span class="hljs-keyword">ac</span>-complex-<span class="hljs-keyword">search</span>-panel/build/<span class="hljs-keyword">ac</span>-complex-<span class="hljs-keyword">search</span>-panel.css';
+</code></pre><p>##效果  <a href="https://tinper-acs.github.io/ac-complex-search-panel/">进入示例</a></p>
+<h2 id="api">API</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">form</td>
+<td style="text-align:center"><code>bee-form</code>组件内的form，必须传入</td>
+<td style="text-align:center">object</td>
+<td style="text-align:right">-</td>
+</tr>
+<tr>
+<td style="text-align:left">searchOpen</td>
+<td style="text-align:center">是否默认展开更多查询条件</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">false</td>
+</tr>
+<tr>
+<td style="text-align:left">search</td>
+<td style="text-align:center">查询的回调</td>
+<td style="text-align:center">function</td>
+<td style="text-align:right">() =&gt; {}</td>
+</tr>
+<tr>
+<td style="text-align:left">reset</td>
+<td style="text-align:center">重置的回调,默认首先调用&#39;this.props.form.resetFields()&#39;清空所有值,无法清空的需要在回调中手动清空</td>
+<td style="text-align:center">function</td>
+<td style="text-align:right">() =&gt; {}</td>
+</tr>
+<tr>
+<td style="text-align:left">resetName</td>
+<td style="text-align:center">重置的文字</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">重置</td>
+</tr>
+<tr>
+<td style="text-align:left">searchName</td>
+<td style="text-align:center">查询的文字</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">查询</td>
+</tr>
+<tr>
+<td style="text-align:left">btnPosition</td>
+<td style="text-align:center">按钮位置</td>
+<td style="text-align:center"><code>left</code>/<code>right</code>/<code>center</code></td>
+<td style="text-align:right">right</td>
+</tr>
+<tr>
+<td style="text-align:left">openName</td>
+<td style="text-align:center">展开的文字或者dom</td>
+<td style="text-align:center">string/dom</td>
+<td style="text-align:right">展开</td>
+</tr>
+<tr>
+<td style="text-align:left">closeName</td>
+<td style="text-align:center">收起的文字或者dom</td>
+<td style="text-align:center">string/dom</td>
+<td style="text-align:right">收起</td>
+</tr>
+<tr>
+<td style="text-align:left">showIcon</td>
+<td style="text-align:center">是否显示展开收起的图标</td>
+<td style="text-align:center">bool</td>
+<td style="text-align:right">true</td>
+</tr>
+</tbody>
+</table>
+<h4 id="开发调试">开发调试</h4>
+<pre class="hljs"><code>$ <span class="hljs-built_in">cd</span> @yonyou/ac-complex-search-panel
+$ npm install
+$ npm run dev</code></pre>      </div>
     </div>
   </div>
 

@@ -1,19 +1,21 @@
 ## ac-complex-search-panel
 
->  查询面板React组件
+>  查询面板React组件 [进入示例](https://tinper-acs.github.io/ac-complex-search-panel/)
 
 ```
 $ ynpm install @yonyou/ac-complex-search-panel --save-dev
 
 引入
 
-import Marquee from '@yonyou/ac-complex-search-panel';
+import AcComplexSearchPanel from '@yonyou/ac-complex-search-panel';
 
 样式引入
 
 import '@yonyou/ac-complex-search-panel/build/ac-complex-search-panel.css';
 
 ```
+
+##效果  [进入示例](https://tinper-acs.github.io/ac-complex-search-panel/)
  
 
 ## API

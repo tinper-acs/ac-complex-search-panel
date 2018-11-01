@@ -18,7 +18,7 @@ module.exports = webpackMerge(baseConfig, {
   output: {
       filename: '[name].[hash].js',
       path: path.join(__dirname, '../ghpages'),
-      publicPath: '/'
+      publicPath: '/ac-complex-search-panel/'
   },
   module: {
     rules: [
