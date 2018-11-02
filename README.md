@@ -1,4 +1,4 @@
-## ac-complex-search-panel
+## ac-complex-search-panel 条件搜索组件
 
 >  查询面板React组件 [进入示例](https://tinper-acs.github.io/ac-complex-search-panel/)
 
