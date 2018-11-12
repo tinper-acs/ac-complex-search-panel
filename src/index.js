@@ -97,7 +97,7 @@ class SearchPanel extends Component {
                             onKeyDown={this.search}
                         >
                             <Button size='sm' className='submit-btn' onClick={this.search}>
-                            查询
+                            {searchName}
                             </Button>
                         </Hotkeys>
                         
@@ -106,7 +106,7 @@ class SearchPanel extends Component {
                             onKeyDown={this.reset}
                         >
                             <Button size='sm' className='reset-btn' onClick={this.reset}>
-                                重置
+                                {resetName}
                             </Button>
                         </Hotkeys>
                     </div>

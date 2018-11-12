@@ -7,15 +7,15 @@
 
 
 ```
-$ ynpm install @yonyou/ac-complex-search-panel --save-dev
+$ ynpm install ac-complex-search-panel --save-dev
 
 引入
 
-import AcComplexSearchPanel from '@yonyou/ac-complex-search-panel';
+import AcComplexSearchPanel from 'ac-complex-search-panel';
 
 样式引入
 
-import '@yonyou/ac-complex-search-panel/build/ac-complex-search-panel.css';
+import 'ac-complex-search-panel/build/ac-complex-search-panel.css';
 
 ```
 
@@ -42,7 +42,7 @@ import '@yonyou/ac-complex-search-panel/build/ac-complex-search-panel.css';
 #### 开发调试
 
 ```sh
-$ cd @yonyou/ac-complex-search-panel
+$ cd ac-complex-search-panel
 $ npm install
 $ npm run dev
 ```
