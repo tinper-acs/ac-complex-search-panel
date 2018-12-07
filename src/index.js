@@ -29,7 +29,9 @@ const defaultProps = {
     btnPosition:'right',
     openName:'展开',
     closeName:'收起',
-    showIcon:true
+    showIcon:true,
+    resetName:'重置',
+    searchName:'查询',
 };
 
 
@@ -37,13 +39,23 @@ class SearchPanel extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchOpen:this.props.searchOpen
+            searchOpen:this.props.searchOpen,
+            showBtn:(!this.props.searchOpen)&&(!this.props.simple)?false:true
         };
     }
     open=()=>{
+        let searchOpen = this.state.searchOpen;
+        let showBtn=null;
+        if(this.props.simple){
+            showBtn=true;
+        }else{
+            searchOpen?showBtn=false:showBtn=true;
+        }
         this.setState({
-            searchOpen: !this.state.searchOpen
-        })
+            searchOpen: !searchOpen,
+            showBtn
+        });
+
     }
     search=()=>{
         let self=this;
@@ -61,11 +73,12 @@ class SearchPanel extends Component {
         }
     }
     render() {
-        const {children,className,form,resetName,searchName,btnPosition,openName,closeName,showIcon } = this.props;
+        const {children,className,form,resetName,searchName,btnPosition,openName,closeName,showIcon,simple } = this.props;
         let classes = 'search-panel';
         if(className){
             classes += ' '+className
         }
+        console.log(simple)
         return (
             <div className={classes} >
                 <div className='search-panel-header' onClick={this.open}>
@@ -86,12 +99,12 @@ class SearchPanel extends Component {
                     </span>
                 </div>
                 <div className='search-panel-simple'>
-                    {this.props.simple}
+                    {simple}
                 </div>
                 <Panel collapsible expanded={this.state.searchOpen}>
                     {children}
                 </Panel>
-                <div className='search-panel-btn' style={{'textAlign':btnPosition}}>
+                <div className='search-panel-btn' style={{'textAlign':btnPosition,'display':this.state.showBtn?'block':'none'}}>
                         <Hotkeys
                             keyName="enter"
                             onKeyDown={this.search}
