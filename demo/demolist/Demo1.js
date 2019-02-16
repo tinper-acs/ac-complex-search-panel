@@ -28,9 +28,11 @@ class Demo1 extends Component {
         }
     }
     search = (err,values) => {//查询
+        console.log('查询');
         console.log(values)
     }
     reset = () => {//重置
+        console.log('重置')
         this.setState({
             approvalState: '',
             closeState: '',
@@ -56,7 +58,7 @@ class Demo1 extends Component {
           }]
         return (
             <div className="demoPadding">
-                <SearchPanel form={self.props.form}
+                <SearchPanel form={self.props.form} 
                 simple={(
                     <Row>
                         <Col md={4} xs={6}>

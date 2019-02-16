@@ -33,7 +33,9 @@ const defaultProps = {
     showIcon:true,
     resetName:'重置',
     searchName:'查询',
-    clsPrefix:'search'
+    clsPrefix:'search',
+    searchHead:'查询面板',
+    searchBtnPosition:'left'
 };
 
 
@@ -76,7 +78,7 @@ class SearchPanel extends Component {
     }
     render() {
         const {children,className,form,resetName,searchName,clsPrefix,searchBtnProps,resetBtnProps,
-            btnPosition,openName,closeName,showIcon,simple,renderHeader } = this.props;
+            btnPosition,openName,closeName,showIcon,simple,renderHeader,searchHead,renderFooter,searchBtnPosition } = this.props;
         let classes = `${clsPrefix}-panel`;
         if(className){
             classes += ' '+className
@@ -88,7 +90,7 @@ class SearchPanel extends Component {
                         renderHeader?renderHeader():(
                             <span>
                                 <span className={`${clsPrefix}-header-title`}>
-                                    查询面板
+                                    {searchHead}
                                 </span>
                                 <span className={`${clsPrefix}-panel-icon`}>
                                     <span >
@@ -106,31 +108,61 @@ class SearchPanel extends Component {
                         )
                     }
                 </div>
-                <div className={`${clsPrefix}-panel-simple`}>
-                    {simple}
-                </div>
+                {
+                    simple?(
+                        <div className={`${clsPrefix}-panel-simple`}>
+                            {simple}
+                        </div>
+                    ):''
+                }
                 <Panel collapsible expanded={this.state.searchOpen}>
                     {children}
                 </Panel>
                 <div className={`${clsPrefix}-panel-btn`} style={{'textAlign':btnPosition,'display':this.state.showBtn?'block':'none'}}>
-                        <Hotkeys
-                            keyName="enter"
-                            onKeyDown={this.search}
-                        >
-                        <Button size='sm' colors='primary' {...searchBtnProps} onClick={this.search}>
-                            {searchName}
-                        </Button>
-                        </Hotkeys>
+                    {
+                        searchBtnPosition=='left'?(
+                            <span>
+                                <Hotkeys
+                                    keyName="enter"
+                                    onKeyDown={this.search}
+                                >
+                                <Button size='sm' colors='primary' {...searchBtnProps} onClick={this.search}>
+                                    {searchName}
+                                </Button>
+                                </Hotkeys>
+                                <Hotkeys
+                                    keyName="alt+c,command+c"
+                                    onKeyDown={this.reset}
+                                >
+                                    <Button size='sm' {...resetBtnProps}  onClick={this.reset}>
+                                        {resetName}
+                                    </Button>
+                                </Hotkeys>
+                            </span>
+                        ):(
+                            <span>
+                                <Hotkeys
+                                    keyName="alt+c,command+c"
+                                    onKeyDown={this.reset}
+                                >
+                                    <Button size='sm' {...resetBtnProps}  onClick={this.reset}>
+                                        {resetName}
+                                    </Button>
+                                </Hotkeys>
+                                <Hotkeys
+                                    keyName="enter"
+                                    onKeyDown={this.search}
+                                >
+                                <Button size='sm' colors='primary' {...searchBtnProps} onClick={this.search}>
+                                    {searchName}
+                                </Button>
+                                </Hotkeys>
+                            </span>
+                        )
+                    }
                         
-                        <Hotkeys
-                            keyName="alt+c,command+c"
-                            onKeyDown={this.reset}
-                        >
-                            <Button size='sm' {...resetBtnProps}  onClick={this.reset}>
-                                {resetName}
-                            </Button>
-                        </Hotkeys>
-                    </div>
+                        {renderFooter?renderFooter():''}
+                 </div>
             </div>
           
         )
