@@ -15,7 +15,7 @@ import AcComplexSearchPanel from 'ac-complex-search-panel';
 
 样式引入
 
-import 'ac-complex-search-panel/build/ac-complex-search-panel.css';
+import 'ac-complex-search-panel/dist/ac-complex-search-panel.css';
 
 ```
 
@@ -36,6 +36,7 @@ import 'ac-complex-search-panel/build/ac-complex-search-panel.css';
 | openName | 展开的文字或者dom | string/dom | 展开 |
 | closeName | 收起的文字或者dom | string/dom | 收起 |
 | showIcon | 是否显示展开收起的图标 | bool | true |
+| renderHeader | 自定义头部信息 | function | - |
 
        
 

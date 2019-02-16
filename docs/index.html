@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>ac-complex-search-panel</title>
+    <title>ac-complex-search-panel 条件搜索组件</title>
     <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
     <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-responsive.css"/>
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
@@ -14,24 +14,26 @@
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span3"><ul class="nav nav-list">
-    <li class="sidebar-header-2"><a href="#ac-complex-search-panel">ac-complex-search-panel</a></li>
+    <li class="sidebar-header-2"><a href="#ac-complex-search-panel-条件搜索组件">ac-complex-search-panel 条件搜索组件</a></li>
+    <li class="sidebar-header-2"><a href="#代码演示">代码演示</a></li>
     <li class="sidebar-header-2"><a href="#api">API</a></li>
     <li class="sidebar-header-4"><a href="#开发调试">开发调试</a></li>
 </ul>
       </div>
-      <div class="span9 main"><h2 id="ac-complex-search-panel">ac-complex-search-panel</h2>
+      <div class="span9 main"><h2 id="ac-complex-search-panel-条件搜索组件">ac-complex-search-panel 条件搜索组件</h2>
 <blockquote>
 <p> 查询面板React组件 <a href="https://tinper-acs.github.io/ac-complex-search-panel/">进入示例</a></p>
 </blockquote>
-<pre class="hljs"><code>$ ynpm install @yonyou/<span class="hljs-keyword">ac</span>-complex-<span class="hljs-keyword">search</span>-panel --<span class="hljs-keyword">save</span>-dev
+<h2 id="代码演示">代码演示</h2>
+<pre class="hljs"><code>$ ynpm install <span class="hljs-keyword">ac</span>-complex-<span class="hljs-keyword">search</span>-panel --<span class="hljs-keyword">save</span>-dev
 
 引入
 
-import AcComplexSearchPanel from '@yonyou/<span class="hljs-keyword">ac</span>-complex-<span class="hljs-keyword">search</span>-panel';
+import AcComplexSearchPanel from '<span class="hljs-keyword">ac</span>-complex-<span class="hljs-keyword">search</span>-panel';
 
 样式引入
 
-import '@yonyou/<span class="hljs-keyword">ac</span>-complex-<span class="hljs-keyword">search</span>-panel/build/<span class="hljs-keyword">ac</span>-complex-<span class="hljs-keyword">search</span>-panel.css';
+import '<span class="hljs-keyword">ac</span>-complex-<span class="hljs-keyword">search</span>-panel/build/<span class="hljs-keyword">ac</span>-complex-<span class="hljs-keyword">search</span>-panel.css';
 </code></pre><p>##效果  <a href="https://tinper-acs.github.io/ac-complex-search-panel/">进入示例</a></p>
 <h2 id="api">API</h2>
 <table>
@@ -104,10 +106,16 @@ import '@yonyou/<span class="hljs-keyword">ac</span>-complex-<span class="hljs-k
 <td style="text-align:center">bool</td>
 <td style="text-align:right">true</td>
 </tr>
+<tr>
+<td style="text-align:left">renderHeader</td>
+<td style="text-align:center">自定义头部信息</td>
+<td style="text-align:center">function</td>
+<td style="text-align:right">-</td>
+</tr>
 </tbody>
 </table>
 <h4 id="开发调试">开发调试</h4>
-<pre class="hljs"><code>$ <span class="hljs-built_in">cd</span> @yonyou/ac-complex-search-panel
+<pre class="hljs"><code>$ <span class="hljs-built_in">cd</span> ac-complex-search-panel
 $ npm install
 $ npm run dev</code></pre>      </div>
     </div>

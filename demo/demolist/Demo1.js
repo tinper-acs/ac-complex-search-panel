@@ -56,7 +56,7 @@ class Demo1 extends Component {
           }]
         return (
             <div className="demoPadding">
-                <SearchPanel form={self.props.form} 
+                <SearchPanel form={self.props.form}
                 simple={(
                     <Row>
                         <Col md={4} xs={6}>

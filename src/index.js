@@ -20,6 +20,7 @@ const propTypes = {
     openName:PropTypes.string,//展开名字
     closeName:PropTypes.string,//收起名字
     showIcon:PropTypes.bool,//是否显示展开收起的图标
+    clsPrefix:PropTypes.string
 };
 
 const defaultProps = {
@@ -32,6 +33,7 @@ const defaultProps = {
     showIcon:true,
     resetName:'重置',
     searchName:'查询',
+    clsPrefix:'search'
 };
 
 
@@ -73,38 +75,44 @@ class SearchPanel extends Component {
         }
     }
     render() {
-        const {children,className,form,resetName,searchName,btnPosition,openName,closeName,showIcon,simple } = this.props;
-        let classes = 'search-panel';
+        const {children,className,form,resetName,searchName,clsPrefix,
+            btnPosition,openName,closeName,showIcon,simple,renderHeader } = this.props;
+        let classes = `${clsPrefix}-panel`;
         if(className){
             classes += ' '+className
         }
-        console.log(simple)
         return (
             <div className={classes} >
-                <div className='search-panel-header' onClick={this.open}>
-                    <span className='search-panel-header-title'>
-                        查询面板
-                    </span>
-                    <span className='search-panel-icon'>
-                        <span >
-                            {
-                                showIcon?( <i className={classnames({
-                                    'uf': true,
-                                    'uf-2arrow-up': this.state.searchOpen,
-                                    'uf-2arrow-down': !this.state.searchOpen
-                                })}/>):''
-                            }
-                            {this.state.searchOpen ? closeName : openName}
-                        </span>
-                    </span>
+                <div className={`${clsPrefix}-panel-header`} onClick={this.open}>
+                    {
+                        renderHeader?renderHeader():(
+                            <span>
+                                <span className={`${clsPrefix}-header-title`}>
+                                    查询面板
+                                </span>
+                                <span className={`${clsPrefix}-panel-icon`}>
+                                    <span >
+                                        {
+                                            showIcon?( <i className={classnames({
+                                                'uf': true,
+                                                'uf-2arrow-up': this.state.searchOpen,
+                                                'uf-2arrow-down': !this.state.searchOpen
+                                            })}/>):''
+                                        }
+                                        {this.state.searchOpen ? closeName : openName}
+                                    </span>
+                                </span>
+                            </span>
+                        )
+                    }
                 </div>
-                <div className='search-panel-simple'>
+                <div className={`${clsPrefix}-panel-simple`}>
                     {simple}
                 </div>
                 <Panel collapsible expanded={this.state.searchOpen}>
                     {children}
                 </Panel>
-                <div className='search-panel-btn' style={{'textAlign':btnPosition,'display':this.state.showBtn?'block':'none'}}>
+                <div className={`${clsPrefix}-panel-btn`} style={{'textAlign':btnPosition,'display':this.state.showBtn?'block':'none'}}>
                         <Hotkeys
                             keyName="enter"
                             onKeyDown={this.search}
