@@ -75,7 +75,7 @@ class SearchPanel extends Component {
         }
     }
     render() {
-        const {children,className,form,resetName,searchName,clsPrefix,
+        const {children,className,form,resetName,searchName,clsPrefix,searchBtnProps,resetBtnProps,
             btnPosition,openName,closeName,showIcon,simple,renderHeader } = this.props;
         let classes = `${clsPrefix}-panel`;
         if(className){
@@ -117,16 +117,16 @@ class SearchPanel extends Component {
                             keyName="enter"
                             onKeyDown={this.search}
                         >
-                            <Button size='sm' className='submit-btn' onClick={this.search}>
+                        <Button size='sm' colors='primary' {...searchBtnProps} onClick={this.search}>
                             {searchName}
-                            </Button>
+                        </Button>
                         </Hotkeys>
                         
                         <Hotkeys
                             keyName="alt+c,command+c"
                             onKeyDown={this.reset}
                         >
-                            <Button size='sm' className='reset-btn' onClick={this.reset}>
+                            <Button size='sm' {...resetBtnProps}  onClick={this.reset}>
                                 {resetName}
                             </Button>
                         </Hotkeys>

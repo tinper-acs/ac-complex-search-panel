@@ -37,6 +37,8 @@ import 'ac-complex-search-panel/dist/ac-complex-search-panel.css';
 | closeName | 收起的文字或者dom | string/dom | 收起 |
 | showIcon | 是否显示展开收起的图标 | bool | true |
 | renderHeader | 自定义头部信息 | function | - |
+| searchBtnProps | 查询按钮属性，onClick无效 | object | - |
+| resetBtnProps | 清空按钮属性，onClick无效 | object | - |
 
        
 
