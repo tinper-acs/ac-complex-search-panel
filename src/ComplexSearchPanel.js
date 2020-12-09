@@ -80,10 +80,16 @@ class SearchPanel extends Component {
         }
     }
     search=()=>{
-        let self=this;
-        this.props.form.validateFields((err, values) => {
-            self.props.search(err, values);
-        });
+        let self=this, beforeSearchRs;
+        const {beforeSearch} = this.props;
+        if(typeof beforeSearch == "function") {
+            beforeSearchRs = beforeSearch()
+        }
+        if(beforeSearchRs !== false) {
+            this.props.form.validateFields((err, values) => {
+                self.props.search(err, values);
+            });
+        }
     }
     reset=()=>{
         this.props.form.resetFields();
