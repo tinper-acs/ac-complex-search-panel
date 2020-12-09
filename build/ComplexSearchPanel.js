@@ -97,10 +97,18 @@ var SearchPanel = function (_Component) {
         };
 
         _this.search = function () {
-            var self = _this;
-            _this.props.form.validateFields(function (err, values) {
-                self.props.search(err, values);
-            });
+            var self = _this,
+                beforeSearchRs = void 0;
+            var beforeSearch = _this.props.beforeSearch;
+
+            if (typeof beforeSearch == "function") {
+                beforeSearchRs = beforeSearch();
+            }
+            if (beforeSearchRs !== false) {
+                _this.props.form.validateFields(function (err, values) {
+                    self.props.search(err, values);
+                });
+            }
         };
 
         _this.reset = function () {
